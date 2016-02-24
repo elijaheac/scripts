@@ -1,0 +1,12 @@
+#!/bin/bash
+
+filename="$(which $1)"
+if [ -z "$filename" ]
+    then
+	filename="/usr/local/bin/$1"
+	sudo cp /usr/local/bin/template $filename
+fi
+if sudo $EDITOR $filename
+    then
+	sudo chmod +x $filename
+fi

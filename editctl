@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ "$1" == "-list" ] || [ -z "$1" ] ; then
+	ls /etc/systemd/system/ | grep .service | sed -e 's/\(\.service\)*$//g'
+else
+	vim /etc/systemd/system/$1.service
+fi
