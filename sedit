@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 filename="$(which $1)"
 if [ -z "$filename" ]
