@@ -1,0 +1,3 @@
+#!/bin/sh
+
+HOSTNAME=$(dig +short -x $(curl atercap.com/ip/ 2>/dev/null)); if [ "$HOSTNAME" = "$(dig +short -x  $(dig +short $HOSTNAME))" ]; then; echo "DNS records match"; else; echo "DNS records are set wrong somehow."; fi
