@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ "$(dig +short $(hostname -f))" = "$(curl icanhazip.com 2>/dev/null)" ]
+	then
+		echo "Your FQDN is set correctly."
+	else
+		echo "Your FQDN is not set correctly."
+fi
