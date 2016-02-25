@@ -3,6 +3,7 @@
 do_update () {
 	cd /tmp
 	git clone https://github.com/elijaheac/scripts.git
+	rm scripts/README.md
 	cp -r scripts/* /usr/local/bin
 	rm -rf scripts
 }
@@ -12,7 +13,7 @@ if [ "$(whoami)" != "root" ]; then
 	exit 1
 fi
 
-if [ "$(cat /usr/local/bin/script-version-identifier)" = "$(curl https://raw.githubusercontent.com/elijaheac/scripts/master/script-version-identfier)" ]; then
+if [ "$(cat /usr/local/bin/script-version-identfier)" = "$(curl https://raw.githubusercontent.com/elijaheac/scripts/master/script-version-identfier 2>/dev/null)" ]; then
 	echo "No updates required."
 else
 	echo "Fetching updates..."
