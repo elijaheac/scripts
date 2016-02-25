@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "$(dig +short $(hostname -f))" = "$(curl icanhazip.com 2>/dev/null)" ]
+if [ "$(dig +short $(hostname -f))" = "$(curl atercap.com/ip/ 2>/dev/null)" ]
 	then
 		echo "Your FQDN is set correctly."
 	else
