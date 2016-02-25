@@ -1,0 +1,20 @@
+#!/bin/sh
+
+do_update () {
+	cd /tmp
+	git clone https://github.com/elijaheac/scripts.git
+	cp -r scripts/* /usr/local/bin
+	rm -rf scripts
+}
+
+if [ "$(whoami)" != "root" ]; then
+	echo "Root permissions required to install."
+	exit 1
+fi
+
+if [ "$(cat /usr/local/bin/script-version-identifier)" = "$(curl https://raw.githubusercontent.com/elijaheac/scripts/master/script-version-identfier)" ]; then
+	echo "No updates required."
+else
+	echo "Fetching updates..."
+	do_update
+fi
