@@ -1,0 +1,90 @@
+#!/usr/bin/env python3
+
+import random
+import sys
+
+mode = {
+	"cmdnotfound" : (
+		"'%s' isn't a valid command, you idiot.",
+		"Learn to type. '%s' isn't gonna cut it.",
+		"Learn to type.",
+		"Come on man!",
+		"Uh...",
+		"Do you even know how to use a keyboard?",
+		"This isn't Windows, you know.",
+		"Go back to Windows, loser.",
+		"Go back to Windows.",
+		"Wow. '%s'?",
+		"I have no idea what you're talking about.",
+		"What's %s?",
+		"I'm getting bored of this.",
+		"Wow. Just wow.",
+		"Are you kidding me?",
+		"... are you kidding me?",
+		"Is that some kind of joke?",
+		"'%s'!?",
+		"Are you pulling my leg?",
+		"'%s'!? Is this some kind of joke?",
+		"Is this... are you... do you even know where you are?",
+		"Your typing skills leave much to be desired.",
+		"You sure are a 1337 hAx0r.",
+		"You're giving me a headache."
+	),
+
+	"suggest" : (
+		"Try these:",
+		"These packages might help you:",
+		"You forgot these:",
+		"You'll need to install some packages...",
+		"Try one of these:",
+		"... well here's some help...",
+		"Uh... packages are helpful...",
+		"You'll need these:",
+		"Did you forget these?",
+		"Do you know how to install packages?",
+		"Learn to use pacman.",
+		"'pacman -S' is a great command.",
+		"Have you ever tried typing 'pacman -S'?"
+		"Maybe these'll work.",
+		"I did what I could.",
+		"It's a good thing I'm here to find packages for you."
+	),
+
+	"cdfail" : (
+		"Learn to type.",
+		"'%s'!?",
+		"That's not a real directory.",
+		"Huh?",
+		"%s isn't a real directory.",
+		"'%s' isn't a real directory.",
+		"'%s' doesn't exist.",
+		"That doesn't exist.",
+		"Uh...",
+		"Uh... try cd'ing to a real place next time?",
+		"get wrecked m8 that doesnt exist"
+	),
+
+	"notadir" : (
+		"That's... uh... not a directory.",
+		"cd'ing to a file doesn't work.",
+		"Do you understand the difference between files and directories?",
+		"Does not compute: don't cd to files",
+		"You imbecile!",
+		"Uh... try cd'ing to a directory next time?",
+		"m8 thats not a folder",
+		"Don't cd to files.",
+		"... you're giving me a headache trying to cd to files.",
+		"thats not a folder m8"
+	)
+}
+
+if len(sys.argv) == 2:
+	print(random.choice( mode[ sys.argv[1] ] ) )
+	print("\n")
+
+elif len(sys.argv) > 2:
+	if sys.argv[1] == "cdfail":
+		if sys.argv[3] == "not":
+			print(random.choice( mode["notadir"] ))
+		else:
+			print(random.choice( mode["cdfail"] ))
