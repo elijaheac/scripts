@@ -3,4 +3,4 @@ I use these scripts for my Linux setups. This repo was initialized from my /usr/
 
 To install, run `update-scripts` after cloning the repository, or run the following command:
 
-`sh -c "$(curl https://raw.githubusercontent.com/elijaheac/scripts/master/update-scripts)"`
+`sh -c "$(curl https://raw.githubusercontent.com/hepteract/scripts/master/update-scripts)"`
